@@ -1,0 +1,9 @@
+#header{
+    -fx-font: 24px "Georgia";
+}
+#currentNameLabel{
+    -fx-font: 48px "Georgia";
+}
+.button{
+    -fx-font: 12px "Georgia";
+}

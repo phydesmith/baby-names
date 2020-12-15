@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 import java.io.*;
 import java.net.URL;
 import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
 
@@ -42,7 +43,7 @@ public class MainController implements Initializable {
     @FXML
     TextField seedTextField;
     @FXML
-    Button nextNameButton, print;
+    Button nextNameButton, addButton, removeButton, print;
     @FXML
     AnchorPane root;
     @FXML
@@ -111,10 +112,12 @@ public class MainController implements Initializable {
     @FXML
     private void addName(){
         this.nameSelections.getItems().addAll(this.namePool.remove(0));
+        this.addButton.setDisable(true);
     }
     @FXML
     private void getNextName(){
         this.currentNameLabel.setText(this.namePool.get(0).toString());
+        this.addButton.setDisable(false);
     }
     @FXML
     private void skipName(){
@@ -123,7 +126,11 @@ public class MainController implements Initializable {
     }
     @FXML
     private void removeName(){
-        this.discard.add(this.nameSelections.getItems().remove(this.nameSelections.getSelectionModel().getSelectedIndex()));
+        try {
+            this.discard.add(this.nameSelections.getItems().remove(this.nameSelections.getSelectionModel().getSelectedIndex()));
+        } catch (IndexOutOfBoundsException e){
+            System.out.println("Nothing Selected to remove.");
+        }
     }
     @FXML
     private void addDiscardToNamePool(){
@@ -158,7 +165,7 @@ public class MainController implements Initializable {
     private String getSelectionsContent(){
         StringBuilder sb = new StringBuilder();
         for (Name name: selections) {
-            sb.append(name);
+            sb.append(name.toStringWithGender());
             sb.append("\n");
         }
         return sb.toString();
@@ -166,7 +173,13 @@ public class MainController implements Initializable {
 
     @FXML
     private void importFile(){
-
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Import");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Text Files", "*.txt")
+        );
+        File file = fileChooser.showOpenDialog(this.stage);
+        this.selections.addAll(NameLoader.load(file));
     }
 
     @FXML

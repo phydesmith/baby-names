@@ -1,8 +1,8 @@
 # Baby Names
 
-An application to help find baby names. Set the seed, choose a gender and the application will show you names pulled from a list of ~40,000. You can add names you like to the list and export them. 
+An application to help find baby names. Set the seed, choose a gender and the application will show you names pulled from a list of ~40,000. You can add names you like to the list viewer and export them. 
 
-Using the same seed, to users can have the exact same names presented to them, ensuring they'll (mostly) see the same names. Compare the name lists with a diff-checker to see which ones you have in common.
+Using the same seed, two users can have the exact same names presented to them, ensuring they'll (mostly) see the same names. Compare the name lists with a diff-checker to see which ones you have in common.
 
 
 ## Compile & Run Source Code

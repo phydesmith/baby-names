@@ -47,11 +47,10 @@ public class MainController implements Initializable {
     @FXML
     AnchorPane root;
     @FXML
-    HBox choiceButtonsHBox;
+    HBox choiceButtonsHBox, addRemoveButtons;;
     @FXML
     ListView<Name> nameSelections;
-    @FXML
-    VBox addRemoveButtons;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -111,8 +110,13 @@ public class MainController implements Initializable {
 
     @FXML
     private void addName(){
-        this.nameSelections.getItems().addAll(this.namePool.remove(0));
-        this.addButton.setDisable(true);
+        if (this.nameSelections.getItems().contains(this.namePool.get(0))) {
+            return;
+        } else {
+            this.nameSelections.getItems().addAll(this.namePool.remove(0));
+            this.addButton.setDisable(true);
+        }
+
     }
     @FXML
     private void getNextName(){

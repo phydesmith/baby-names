@@ -12,7 +12,7 @@ public class NameLoader {
         System.out.println("in load)");
         List<Name> names = new ArrayList<Name>();
         try{
-            BufferedReader in = new BufferedReader(new InputStreamReader(NameLoader.class.getClassLoader().getResourceAsStream("data/name-list.csv")));
+            BufferedReader in = new BufferedReader(new InputStreamReader(NameLoader.class.getResourceAsStream("/data/name-list.csv")));
             String line = "";
             while( (line = in.readLine()) != null ) {
                 System.out.print("\r                                                          ");

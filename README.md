@@ -11,11 +11,15 @@ Apache Maven 3.6.3
 
 Java 14.0.1
 
+### Build and Package with Maven
 `mvn clean compile package shade:shade`
 
 `java -classpath target/baby-name-1.0-SNAPSHOT.jar io.javasmithy.AppEntry`
 
+### Compile and create Runtime Image with Maven and JavaFX Plugin
 `mvn clean compile javafx:jlink`
+
+`target/BabyNames/bin/launcher`
 
 ## About
 

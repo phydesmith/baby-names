@@ -19,7 +19,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/main-layout-edited.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/main-layout-borderpane.fxml"));
             stage.setScene(new Scene( (Parent) loader.load(), 800, 800));
             ((MainController)loader.getController()).setStage(stage);
             stage.setTitle("Baby Names");

@@ -7,35 +7,42 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane fx:id="titleRoot" prefHeight="800.0" prefWidth="800.0" stylesheets="@../css/main-style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.javasmithy.controller.MainController">
+<AnchorPane fx:id="titleRoot" prefHeight="800.0" prefWidth="800.0" stylesheets="@../css/main-style.css"
+            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="io.javasmithy.controller.MainController">
 
-    <Label fx:id="header" layoutX="335.0" prefHeight="100" prefWidth="200" text="Baby Names" textAlignment="CENTER" AnchorPane.leftAnchor="335.0" AnchorPane.topAnchor="0.0" />
+    <Label fx:id="header" layoutX="335.0" prefHeight="100" prefWidth="200" text="Baby Names" textAlignment="CENTER"
+           AnchorPane.leftAnchor="335.0" AnchorPane.topAnchor="0.0"/>
 
-      
-          <HBox fx:id="choiceButtonsHBox" layoutX="228.0" layoutY="75.0" spacing="10">
+
+    <HBox fx:id="choiceButtonsHBox" layoutX="228.0" layoutY="75.0" spacing="10">
         <children>
-            <Button fx:id="chooseBoth" onAction="#bothChosen" prefHeight="25" prefWidth="100" text="Both" />
-            <Button fx:id="chooseBoy" onAction="#boyChosen" prefHeight="25" prefWidth="100" text="Boy" />
-            <Button fx:id="chooseGirl" onAction="#girlChosen" prefHeight="25" prefWidth="100" text="Girl" />
+            <Button fx:id="chooseBoth" onAction="#bothChosen" prefHeight="25" prefWidth="100" text="Both"/>
+            <Button fx:id="chooseBoy" onAction="#boyChosen" prefHeight="25" prefWidth="100" text="Boy"/>
+            <Button fx:id="chooseGirl" onAction="#girlChosen" prefHeight="25" prefWidth="100" text="Girl"/>
         </children>
     </HBox>
-   <TextField fx:id="seedTextField" layoutX="344.0" layoutY="125.0" text="0" />
-   <Label fx:id="seedLabel" layoutX="306.0" layoutY="129.0" prefHeight="17.0" prefWidth="38.0" text="Seed:" />
+    <TextField fx:id="seedTextField" layoutX="344.0" layoutY="125.0" text="0"/>
+    <Label fx:id="seedLabel" layoutX="306.0" layoutY="129.0" prefHeight="17.0" prefWidth="38.0" text="Seed:"/>
 
-    <Label fx:id="currentNameLabel" layoutX="210.0" layoutY="185.0" prefHeight="60.0" prefWidth="390.0" text="Test" textAlignment="CENTER" visible="false" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="185.0" />
-    <ListView fx:id="nameSelections" layoutX="150.0" layoutY="390.0" prefHeight="350.0" prefWidth="500.0" visible="false" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="390.0" />
-   <HBox fx:id="addRemoveButtons" layoutX="265.0" layoutY="340.0" prefHeight="44.0" prefWidth="320.0" spacing="10" visible="false">
-      <children>
-            <Button fx:id="removeButton" onAction="#removeName" prefHeight="25" prefWidth="75" text="Remove" />
-            <Button fx:id="addButton" onAction="#addName" prefHeight="25" prefWidth="75" text="Add" />
-            <Button fx:id="nextNameButton" onAction="#skipName" prefHeight="25" prefWidth="75" text="Next" />
-      </children>
-   </HBox>
+    <Label fx:id="currentNameLabel" layoutX="210.0" layoutY="185.0" prefHeight="60.0" prefWidth="390.0" text="Test"
+           textAlignment="CENTER" visible="false" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="185.0"/>
+    <ListView fx:id="nameSelections" layoutX="150.0" layoutY="390.0" prefHeight="350.0" prefWidth="500.0"
+              visible="false" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="390.0"/>
+    <HBox fx:id="addRemoveButtons" layoutX="265.0" layoutY="340.0" prefHeight="44.0" prefWidth="320.0" spacing="10"
+          visible="false">
+        <children>
+            <Button fx:id="removeButton" onAction="#removeName" prefHeight="25" prefWidth="75" text="Remove"/>
+            <Button fx:id="addButton" onAction="#addName" prefHeight="25" prefWidth="75" text="Add"/>
+            <Button fx:id="nextNameButton" onAction="#skipName" prefHeight="25" prefWidth="75" text="Next"/>
+        </children>
+    </HBox>
     <HBox fx:id="printIOHBox" layoutX="265.0" layoutY="760.0" spacing="10">
         <children>
-            <Button fx:id="printButton" onAction="#printSelections" prefHeight="25" prefWidth="75" text="Print" disable="true" />
-            <Button fx:id="exportButton" onAction="#exportFile" prefHeight="25" prefWidth="75" text="Export" />
-            <Button fx:id="importButton" onAction="#importFile" prefHeight="25" prefWidth="75" text="Import" />
+            <Button fx:id="printButton" onAction="#printSelections" prefHeight="25" prefWidth="75" text="Print"
+                    disable="true"/>
+            <Button fx:id="exportButton" onAction="#exportFile" prefHeight="25" prefWidth="75" text="Export"/>
+            <Button fx:id="importButton" onAction="#importFile" prefHeight="25" prefWidth="75" text="Import"/>
         </children>
     </HBox>
 

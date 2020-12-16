@@ -12,6 +12,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
@@ -43,9 +44,9 @@ public class MainController implements Initializable {
     @FXML
     TextField seedTextField;
     @FXML
-    Button nextNameButton, addButton, removeButton, print;
+    Button nextNameButton, addButton, removeButton, previousNameButton, print;
     @FXML
-    AnchorPane root;
+    BorderPane root;
     @FXML
     HBox choiceButtonsHBox, addRemoveButtons;;
     @FXML
@@ -126,6 +127,11 @@ public class MainController implements Initializable {
     @FXML
     private void skipName(){
         this.discard.add(this.namePool.remove(0));
+        getNextName();
+    }
+    @FXML
+    private void getLastName(){
+        this.namePool.add(0, this.discard.remove(this.discard.size()-1));
         getNextName();
     }
     @FXML

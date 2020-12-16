@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="titleRoot" prefHeight="800.0" prefWidth="800.0" stylesheets="@../css/main-style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.javasmithy.controller.MainController">
+<BorderPane fx:id="root" prefHeight="800.0" prefWidth="800.0" stylesheets="@../css/main-style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.javasmithy.controller.MainController">
       <top>
          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
             <children>
@@ -39,6 +39,7 @@
                 <Label fx:id="currentNameLabel" alignment="CENTER" prefHeight="60.0" prefWidth="390.0" text="Test" textAlignment="CENTER" visible="false" />
                 <HBox fx:id="addRemoveButtons" alignment="CENTER" prefHeight="44.0" prefWidth="320.0" spacing="10" visible="false">
                     <children>
+                        <Button fx:id="previousNameButton" onAction="#getLastName" prefHeight="25" prefWidth="75" text="Previous" />
                         <Button fx:id="removeButton" onAction="#removeName" prefHeight="25" prefWidth="75" text="Remove" />
                         <Button fx:id="addButton" onAction="#addName" prefHeight="25" prefWidth="75" text="Add" />
                         <Button fx:id="nextNameButton" onAction="#skipName" prefHeight="25" prefWidth="75" text="Next" />
